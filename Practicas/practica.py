@@ -114,7 +114,7 @@ La persona {InformacionPersona.Nombre} con el numero de cedula {InformacionPerso
 
 def AsignacioAutos (peso):
     if peso > Carro1.PesoMaximo:
-        print (f"No se aceptan gordos o goradas")
+        print (f"No se aceptan personas con sobrepeso :)")
 
     elif Carro2.PesoMaximo < peso <= Carro1.PesoMaximo:
         print (f" se le asignara el carro {Carro1.Marca} con el numero de placas {Carro1.Placa}")
@@ -129,7 +129,7 @@ def AsignacioAutos (peso):
         print (f" se le asignara el carro {Carro4.Marca} con el numero de placas {Carro4.Placa}")
 
     else:
-        print (" No se le asigno ningun auto, Tampoco llevamos huesos XD")
+        print (" Tampoco llevamos cosas livianas")
 
 AsignacioAutos(InformacionPersona.Peso)
 
