@@ -71,7 +71,7 @@ while True:
 
  
 "--------------------------------------------------------EJERCICIO PRACTICO _-----------------------------------------------------------------------------------------------------"
-" En este repaso are un codigo donde se pida los datos de una persona, con estos datos se sera posible asignar un carro para asi porder llevar llevar la persona de un lugar a otro segun su peso  "
+"  En este repaso haré un código donde se pidan los datos de una persona. Con estos datos será posible asignar un carro para una persona, dependiendo de su peso, se le asignará un carro diferente.   "
 
 
 from Asignacion import Carro1, Carro2, Carro3, Carro4 
