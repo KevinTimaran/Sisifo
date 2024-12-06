@@ -3,7 +3,7 @@
 "  En este repaso haré un código donde se pidan los datos de una persona. Con estos datos será posible asignar un carro para una persona, dependiendo de su peso, se le asignará un carro diferente.   "
 "El programa debe permitir dar un presio a la persona segun la parte a donde quiera ir"
 
-from Practicas.Carro import Carro1, Carro2, Carro3, Carro4 
+from Carro import Carro1, Carro2, Carro3, Carro4 
 
 class InfoPersona:
     def __init__(self, Nombre:str, CC:int, Peso:int):
@@ -11,39 +11,52 @@ class InfoPersona:
         self.Cedula = CC
         self.Peso= Peso
 
-Nombre = str (input("Por favor digame su nombre:"))
-cedula = int (input("dijite su cedula:"))
-Peso = int (input("Cual es su peso:"))
-distancia = int (input("Digame en kilometros la distansia que piensa ir"))
-InformacionPersona = InfoPersona(Nombre, cedula, Peso)
+        _method_="darNombre"
+        _params_="Nombre"
+        _returns_="Nombre"
+        _descriptions_="Mi metodo me permite retornar el nombre "
+        def darNombre (self)->str:
+            
+            return self.Nombre
 
+        _method_="darCedula"
+        _params_="Cedula"
+        _returns_="Cedula"
+        _descriptions_="Mi metodo me permite retornar la cedula"
+        def darCedula (self)->int:
+         
+            return self.Cedula
 
-def Correccion (nombre, cc, peso):
-    if isinstance (nombre, str):
-        pass
-    else: return ("La casilla solo acepta letras")
+        _method_="darPeso"
+        _params_="Peso"
+        _returns_="Peso"
+        _descriptions_="Mi metodo me permite retornar el peso de la persona"
+        def darPeso (self)->int:
+         
+            return self.Peso
 
-    if isinstance (cc, int):
-        pass
-    else:
-        return ("La casilla solo acepta numeros")
+        _method_="darDistancia"
+        _params_="Distancia"
+        _returns_="Distancia"
+        _descriptions_="Mi metodo me permite retornar la distancia "
+        def darDistancia (self)->int:
+            return darDistancia
 
-    if isinstance(peso, int):
-        pass
-    else:
-        return ("La casilla solo acepta numeros")
+Persona = InfoPersona(
+    Nombre = str (input("Porfavor dijite su nombre: ")),
+    CC = int(input("Por favor dijite su Cedula: ")),
+    Peso =int(input("Por favor dijite su peso: "))
+)
 
-print (Correccion)
-
-Correccion(InformacionPersona.Nombre, InformacionPersona.Cedula, InformacionPersona.Peso)              
     
 print(f""" 
 
 Asignacion del auto:\n
-La persona {InformacionPersona.Nombre} con el numero de cedula {InformacionPersona.Cedula}
+La persona {Persona.Nombre} con el numero de cedula {Persona.Cedula}
 """)
 
 def AsignacioAutos (peso):
+    Persona.Peso = peso
     if peso > Carro1.PesoMaximo:
 
         print (f"No se aceptan personas con sobrepeso:)")
@@ -64,7 +77,7 @@ def AsignacioAutos (peso):
     else:
         print (" Tampoco llevamos cosas livianas")
 
-AsignacioAutos(InformacionPersona.Peso)
+AsignacioAutos(Persona.Peso)
 
 
 
