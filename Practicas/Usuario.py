@@ -4,7 +4,7 @@
 "El programa debe permitir dar un presio a la persona segun la parte a donde quiera ir"
 
 from Carro import Carro1, Carro2, Carro3, Carro4 
-
+from Cobros import Presio
 class InfoPersona:
     def __init__(self, Nombre:str, CC:int, Peso:int, Distancia):
         self.Nombre = Nombre
@@ -80,6 +80,7 @@ def AsignacioAutos (peso):
         print (" Tampoco llevamos cosas livianas")
 
 AsignacioAutos(Persona.Peso)
+print (f"nose si coja {Persona.Distancia}")
 
 
 

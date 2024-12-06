@@ -1,3 +1,15 @@
+
+from Usuario import InfoPersona
+
 class Cobros:
-    from Practicas.Carro import Carro1,Carro2,Carro3,Carro4
-    
+
+    def __init__(Persona:InfoPersona):
+        self.Persona = Persona
+        
+    def darPresio (self)->int:
+        Distancia =self.Persona . Distancia
+        Presio = 3000* Distancia
+        return Presio
+
+
+Presio = Cobros.darPresio
