@@ -6,10 +6,11 @@
 from Carro import Carro1, Carro2, Carro3, Carro4 
 
 class InfoPersona:
-    def __init__(self, Nombre:str, CC:int, Peso:int):
+    def __init__(self, Nombre:str, CC:int, Peso:int, Distancia):
         self.Nombre = Nombre
         self.Cedula = CC
         self.Peso= Peso
+        self.Distancia = Distancia
 
         _method_="darNombre"
         _params_="Nombre"
@@ -40,12 +41,13 @@ class InfoPersona:
         _returns_="Distancia"
         _descriptions_="Mi metodo me permite retornar la distancia "
         def darDistancia (self)->int:
-            return darDistancia
+            return self.Distancia
 
 Persona = InfoPersona(
     Nombre = str (input("Porfavor dijite su nombre: ")),
     CC = int(input("Por favor dijite su Cedula: ")),
-    Peso =int(input("Por favor dijite su peso: "))
+    Peso =int(input("Por favor dijite su peso: ")),
+    Distancia=int(input("Por favor coloque la distancia a la que desea ir: "))
 )
 
     
