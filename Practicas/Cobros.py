@@ -1,9 +1,8 @@
 
-from Usuario import InfoPersona
+
 
 class Cobros:
-
-    def __init__(Persona:InfoPersona):
+    def __init__(self,Persona: InfoPersona):
         self.Persona = Persona
         
     def darPresio (self)->int:
@@ -13,3 +12,5 @@ class Cobros:
 
 
 Presio = Cobros.darPresio
+
+
