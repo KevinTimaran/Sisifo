@@ -1,7 +1,4 @@
 
-"--------------------------------------------------------EJERCICIO PRACTICO _-----------------------------------------------------------------------------------------------------"
-"  En este repaso haré un código donde se pidan los datos de una persona. Con estos datos será posible asignar un carro para una persona, dependiendo de su peso, se le asignará un carro diferente.   "
-"El programa debe permitir dar un presio a la persona segun la parte a donde quiera ir"
 class InfoPersona:
     def __init__(self, Nombre:str, CC:int, Peso:int, Distancia: int):
         self.Nombre = Nombre

@@ -6,11 +6,10 @@ class Cobros:
         self.Persona = Persona
         
     def darPresio (self)->int:
-        Distancia =self.Persona . Distancia
+        Distancia =self.Persona.darDistancia()
         Presio = 3000* Distancia
-        return Presio
+        return (F"""Para la distancia dada se le cobrara:  {Presio}$""")
 
 
-Presio = Cobros.darPresio
 
 

@@ -1,7 +1,3 @@
-_Autor_ ="Kevin Buesaquillo Timaran"
-_License_ ="GPL"
-_Version_ ="1.0.0"
-_Email_ ="kevin.buesaquillo@gmail.com"
 
 class Curso:
     #----------------------------------------------------------------
