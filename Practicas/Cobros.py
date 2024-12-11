@@ -1,4 +1,4 @@
-
+from Usuario import InfoPersona
 
 
 class Cobros:
