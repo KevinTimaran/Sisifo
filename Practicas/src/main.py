@@ -26,7 +26,6 @@ La persona {Persona.darNombre()} con el numero de cedula {Persona.darCedula()} c
 """)
 
 asignacion_autos = Asignacion(Persona)
-
 resultado = asignacion_autos.AsignacioAutos() 
 print(resultado)
 
