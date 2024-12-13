@@ -3,7 +3,7 @@ import tkinter as tk
 # Crear una ventana principal
 ventana = tk.Tk()  # Asegúrate de usar mayúscula 'T' en 'Tk'
 ventana.title("Este es un titulo")
-ventana.geometry("300x300")
+ventana.geometry("500x500")
 
 # Crear una etiqueta
 etiqueta = tk.Label(ventana, text="Esto es una etiqueta")
