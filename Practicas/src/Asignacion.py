@@ -10,9 +10,8 @@ class Asignacion:
         peso = self.persona.darPeso()
         if not isinstance(peso, int): 
             return "Error: El peso debe ser un número entero."
-        
         if peso > Carro1.PesoMaximo:
-            return "No se aceptan personas con sobrepeso :)"
+            return ("No se aceptan persona con sobrepeso")
         elif Carro2.PesoMaximo < peso <= Carro1.PesoMaximo:
             return f"Se le asignará el carro {Carro1.Marca} con el número de placas {Carro1.Placa}"
         elif Carro2.PesoMaximo >= peso > Carro3.PesoMaximo:

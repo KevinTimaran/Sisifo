@@ -25,10 +25,12 @@ Asignacion del auto:\n
 La persona {Persona.darNombre()} con el numero de cedula {Persona.darCedula()} con un peso de {Persona.darPeso()} desea ir a una distancia de {Persona.darDistancia()}KM
 """)
 
+# Asigna el auto que le toca a la persona
 asignacion_autos = Asignacion(Persona)
 resultado = asignacion_autos.AsignacioAutos() 
 print(resultado)
 
+#Asigna el presio con respecto a la distansia
 valor = Cobros(Persona)
 cobrar = valor.darPresio()
 print(cobrar)
