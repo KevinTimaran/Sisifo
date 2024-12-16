@@ -20,7 +20,6 @@ Persona = InfoPersona(
 )
 
 print(f""" 
-
 Asignacion del auto:\n
 La persona {Persona.darNombre()} con el numero de cedula {Persona.darCedula()} con un peso de {Persona.darPeso()} desea ir a una distancia de {Persona.darDistancia()}KM
 """)
@@ -34,3 +33,4 @@ print(resultado)
 valor = Cobros(Persona)
 cobrar = valor.darPresio()
 print(cobrar)
+
