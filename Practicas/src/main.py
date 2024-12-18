@@ -9,7 +9,6 @@ Este código es una práctica en la cual deseo aprender lógica de programación
 "---------------------------------------------------------Falta documentar y ordenar los modulos-------------------------------------------------------------------------------------------------"
 from Usuario import InfoPersona
 from Asignacion import Asignacion
-from Cobros import Cobros
 
 Persona = InfoPersona(
     Nombre = input("Por favor digite su nombre: "),
@@ -29,8 +28,5 @@ asignacion_autos = Asignacion(Persona)
 resultado = asignacion_autos.AsignacioAutos() 
 print(resultado)
 
-#Asigna el presio con respecto a la distansia
-valor = Cobros(Persona)
-cobrar = valor.darPresio()
-print(cobrar)
+
 
