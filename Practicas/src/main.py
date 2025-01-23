@@ -1,6 +1,5 @@
 "--------------------------------------------------------EJERCICIO PRACTICO _-----------------------------------------------------------------------------------------------------"
 """
-Este código es una práctica en la cual deseo aprender lógica de programación.
  El código trata sobre dar la información necesaria para poder asignar un carro,
  teniendo en cuenta su peso y dar un valor monetario según su distancia, 
  además sé ira añadiendo funciones según vaya aprendiendo más de este mundo
