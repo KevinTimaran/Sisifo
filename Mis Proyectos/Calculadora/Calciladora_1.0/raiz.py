@@ -1,5 +1,5 @@
 #Cracion de interfaz
-from tkinter import Tk, Label, Button, Entry
+from tkinter import Tk,  Button, Entry
 raiz = Tk () 
 
 #---------------------------------------------------------------------------
