@@ -107,34 +107,4 @@ btnResultado.place(x=170, y=210, width=60, height=40)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 raiz.mainloop() 
