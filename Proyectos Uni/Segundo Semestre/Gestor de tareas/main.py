@@ -135,7 +135,7 @@ def darOpcion(indice=None, titulo=None, descripcion=None, fecha_vencimiento=None
                 return darOpcion()
 
             if 0 <= indice < len(listaTarea):
-                listaTarea.pop(indice)
+                listaTarea.pop(indice) # Me permite eliminar una tarea especifica de la lista 
                 print("Tarea eliminada.")
                 return deseaAlgoMas()
 
