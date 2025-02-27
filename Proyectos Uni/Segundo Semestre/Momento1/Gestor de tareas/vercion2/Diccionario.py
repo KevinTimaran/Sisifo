@@ -1,26 +1,29 @@
 Lista = []
 
 
+class ListaTareas:
+    def __init__(self, Titulo, Descripcion, Fecha):
+        self.Titulo = Titulo
+        self.Descripcion = Descripcion
+        self.Fecha = Fecha
 
-def __init__(self, Titulo, Descripcion, fecha):
-    self.Titulo = Titulo
-    self.Descripcion = Descripcion
-    self.Fecha = fecha
+        Diccionario = {
+            'Titulo': Titulo,
+            'Descripcion': Descripcion,
+            'fecha': Fecha
+        }
 
-def darTarea (self):
-    return self.Titulo
-
-def darDescripcion (self):
-    return self.Descripcion
-
-def darFecha (self):
-    return self.Fecha
+        Lista.append(Diccionario)
 
 
-Diccionario = {
-    'Titulo': darTarea,
-    'Descripcion': darDescripcion,
-    'fecha': darFecha
-}
+    def MostrarTarea ():
+            if not Lista:
+                    print("No hay tareas registradas.")
+                    
+                
+            print("\n📌 TAREAS 📌")
+            for i, Diccionario in enumerate(Lista):
+                print(f"{i}. {Diccionario['Titulo']} Vence el {Diccionario['fecha']}")
 
-Lista.append(Diccionario)
+
+

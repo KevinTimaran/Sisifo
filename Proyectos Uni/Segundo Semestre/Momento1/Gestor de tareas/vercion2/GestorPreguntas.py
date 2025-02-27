@@ -1,25 +1,33 @@
-from main import PreguntasInicio
-from Preguntas import GestorTareas
+
+from Diccionario import ListaTareas
 
 
 class GestorOpciones:
+    def __init__(self, Numero):
+        self.Numero = Numero
 
-    def OpcinValida (self):
-        if PreguntasInicio == "1":
-            return  GestorTareas.VerTarea()
+    def OpcinValida (self, Numero):
+        if self.Numero == "1":
+            Titulo= input("Cual es el titulo de su nuevo tarea: ")
+            Descripcion = input("De una pequeña descriccion de la terea: ")
+            Fecha = input ("Digete la fecha maxima para hacer la tarea(Dia/Mes/Año): ")
+            ListaTareas(Titulo,Descripcion,Fecha)
+            print ("Se guardo la informacion")
+
+            
         
-        elif PreguntasInicio == "2":
-            return GestorTareas.EditarTarea()
+        elif self.Numero == "2":
+            pass
         
-        elif PreguntasInicio =="3":
-            return GestorTareas.EliminarTarea()
+        elif self.Numero =="3":
+            pass
         
-        elif PreguntasInicio =="4":
-            return GestorTareas.MarcarTarea()
+        elif self.Numero =="4":
+            pass
         
-        elif PreguntasInicio =="5":
-            return GestorTareas.VerTarea()
+        elif self.Numero =="5":
+            pass
         
-        elif PreguntasInicio =="6":
-            return GestorTareas.salir()
+        elif self.Numero =="6":
+            pass
         
