@@ -13,7 +13,7 @@ raiz.title("Calculadora_1.0")  # Titulo de interfaz
 raiz.resizable(0,0)
 
 #Icono de interfaz
-raiz.iconbitmap("C:/Users/kevin/Desktop/sisifo/Sisifo/Mis Proyectos/Calculadora/Imagenes.ICO/meme.ico")
+#raiz.iconbitmap("C:/Users/kevin/Desktop/sisifo/Sisifo/Mis Proyectos/Calculadora/Imagenes.ICO/meme.ico")
 
 #tamaño interfaz
 raiz.geometry("400x500") 
