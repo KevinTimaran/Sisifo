@@ -1,27 +1,39 @@
 import smtplib
+import time
 from decouple import config
 
 EMAIL_REMITE = config("EMAIL_REMITE")
 EMAIL_PASSWORD = config("EMAIL_PASSWORD")
 
-# Mensaje con asunto (Subject)
-mensaje = """\
-Subject: Prueba de correo desde Python
+def EnviarCorreo(Destino, Compra):
 
-Hola, este es un mensaje de prueba enviado con smtplib y python-decouple.
-"""
-try: 
-    Objeto = smtplib.SMTP('smtp.gmail.com',587)
+    try:
+        inicion = time.time()
 
-    Objeto.starttls() # se inicia TLS para seguridad
+        Objeto = smtplib.SMTP("smtp.gmail.com", 587)
 
-    Objeto.login(EMAIL_REMITE,EMAIL_PASSWORD) # se usa las credenciales de .env
-    
+        Objeto.starttls() # se inicia TLS para seguridad
 
-    Objeto.sendmail(EMAIL_REMITE, 'kevinstiventimaran@gmail.com', mensaje)
+        Objeto.login(EMAIL_REMITE,EMAIL_PASSWORD) # se usa las credenciales de .env
 
-    Objeto.quit()
-    print ("Prueba de correo enviado con exito")
+        #Creamos el mendaje de asunto
+        asunto = "Comfirmacion de compra"
+        mensaje =f"Subuject:{asunto}\n\n Gracias por tu compra.\n,\n Detalles {Compra}"
+        
 
-except Exception as e:
-    print("❌ Error al enviar correo:", e)
+        Objeto.sendmail(EMAIL_REMITE, Destino, mensaje)
+        Objeto.quit()
+        print ("Prueba de correo enviado con exito")
+
+        fin = time.time()
+        tiempoTotal = fin - inicion
+        if tiempoTotal < 3 :
+            print (f"El tiempo que tardo en enviar el mensaje es de {tiempoTotal:2f} segundos.")
+        else:
+            print (f"El tiempo que tardo enviar el mansaje fue de {tiempoTotal:2f}segundos (Excede el limite de 2s)")
+
+    except Exception as e:
+        print("❌ Error al enviar correo:", e)
+
+if __name__ == "__main__":
+    EnviarCorreo("kevinstiventimaran@gmail.com", "Paaaan- 1000")
