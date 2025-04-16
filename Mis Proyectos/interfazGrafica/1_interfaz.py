@@ -7,7 +7,7 @@ raiz.title("ventana de prueba") # Con esto le damos un nombre o titulo a nuestra
 
 raiz.resizable(0,0) # nos ayuda a que la interfas grafica no se pueda redimensionar  el prime numero es el ancho(width) y el segundo la altura (height)
 
-raiz.iconbitmap("C:/Users/kevin/Desktop/sisifo/Sisifo/interfasGrafica/Imagenes.ICO/meme.ico") # para colocar un icono a nuestra interfas
+#raiz.iconbitmap("C:/Users/kevin/Desktop/sisifo/Sisifo/interfasGrafica/Imagenes.ICO/meme.ico") # para colocar un icono a nuestra interfas
 
 raiz.geometry("500x700") # esto nos ayuda a colocar un tamaño espesifico la interfas
 

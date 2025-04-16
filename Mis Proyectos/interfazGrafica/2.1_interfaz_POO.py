@@ -6,6 +6,8 @@ from tkinter import Tk, Label, Button, Entry, Frame
 class ventana(Frame):
 
     def __init__(self, master=None):
+        #super lo estamos usando en estos momentos para ingresar a la 
+        #clase padre de Tkinter
         super().__init__(master, width=320, height=170)
         self.master = master
         self.pack()
