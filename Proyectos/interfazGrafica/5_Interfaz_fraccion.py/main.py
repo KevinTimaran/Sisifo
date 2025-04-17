@@ -45,27 +45,20 @@ class Aplicacion(Frame):
 
 
 
-        label1 =Label(frame2, text="Ent")
-        label1.place(relx=.01, rely=.35)
+        Label(frame2, text="Ent").place(relx=.01, rely=.35)
 
-        label2 =Label(frame2, text="Nun")
-        label2.place(relx=.80, rely=.15)
+        Label(frame2, text="Nun").place(relx=.80, rely=.15)
 
-        label3 =Label(frame2, text="Den")
-        label3.place(relx=.80, rely=.62)
-
-        label4 =Label(frame3, text="Ent")
-        label4.place(relx=.01, rely=.35)
-
-        label5 =Label(frame3, text="Nun")
-        label5.place(relx=.80, rely=.15)
-
-        label6 =Label(frame3, text="Den")
-        label6.place(relx=.80, rely=.62)
-
-        label7 =Label(frame1, text="Resultado:")
-        label7.place(relx=.03, rely=.72)
-
+        Label(frame2, text="Den").place(relx=.80, rely=.62)
+        
+        Label(frame3, text="Ent").place(relx=.01, rely=.35)
+    
+        Label(frame3, text="Nun").place(relx=.80, rely=.15)
+        
+        Label(frame3, text="Den").place(relx=.80, rely=.62)
+        
+        Label(frame1, text="Resultado:").place(relx=.03, rely=.72)
+        
 
         button1 =Button(frame1, text="Calcular")
         button1.place(relx=.60, rely=.50,  width=100, height=30)
