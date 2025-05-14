@@ -1,45 +1,55 @@
-import matplotlib.pyplot as plt
-
-def graficar_trayectoria(datos_grafico, ax, canvas):
-    """Actualiza la gráfica con los nuevos datos"""
+def graficar_trayectoria(datos, ax, canvas):
+    """Visualización mejorada de trayectorias"""
     ax.clear()
     
-    # Configuración básica
-    ax.set_title("Trayectoria de Misiles")
+    # 1. Configuración inicial
+    ax.set_title("Simulación de Defensa Aérea")
     ax.set_xlabel("Distancia (km)")
     ax.set_ylabel("Altura (km)")
-    ax.grid(True)
+    ax.grid(True, linestyle='--', alpha=0.3)
     
-    # Convertir metros a km para visualización
-    dist_km = datos_grafico["distancia_ciudad"]/1000
-    altura_km = datos_grafico["altura_enemiga"]/1000
-    y_int_km = datos_grafico["y_interceptor"]/1000
-    y_mis_km = datos_grafico["y_misil"]/1000
+    # 2. Calcular límites dinámicos
+    max_dist = max(
+        datos['distancia_ciudad'] / 1000 * 1.1,
+        max(p[0]/1000 for p in datos['puntos_interceptor']) * 1.05
+    )
+    max_alt = max(
+        datos['altura_enemiga'] / 1000 * 1.2,
+        max(p[1]/1000 for p in datos['puntos_interceptor']) * 1.1,
+        datos['altura_enemiga'] / 1000  # Asegurar que se vea la altura inicial
+    )
+    ax.set_xlim(0, max_dist)
+    ax.set_ylim(0, max_alt)
     
-    # Trayectoria aliada (azul)
-    ax.plot([0, dist_km], [0, y_int_km], 'b-', linewidth=2, label="Misil Aliado")
+    # 3. Convertir puntos a km para visualización
+    x_interceptor = [p[0]/1000 for p in datos['puntos_interceptor']]
+    y_interceptor = [p[1]/1000 for p in datos['puntos_interceptor']]
     
-    # Trayectoria enemiga (roja)
-    ax.plot([dist_km, dist_km], [altura_km, y_mis_km], 'r--', linewidth=2, label="Misil Enemigo")
+    # 4. Graficar trayectorias
+    ax.plot(x_interceptor, y_interceptor, 'b-', linewidth=2, 
+            label=f"Interceptor ({datos['v0']/1000:.1f} km/s)")
     
-    # Punto de intercepción
-    if abs(datos_grafico["y_interceptor"] - datos_grafico["y_misil"]) <= 0.5:
-        ax.scatter(dist_km, y_int_km, color='green', s=100, label="Intercepción")
+    # Trayectoria enemiga (convertir a km)
+    x_enemigo = [p[0]/1000 for p in datos['puntos_enemigo']]
+    y_enemigo = [p[1]/1000 for p in datos['puntos_enemigo']]
+    ax.plot(x_enemigo, y_enemigo, 'r--', linewidth=2, 
+            label="Misil Enemigo")
     
-    #---------------------------------
-    # Elementos visuales
-    #---------------------------------
-    ax.set_facecolor('#f0f0f0')  # Fondo gris claro
-    canvas.figure.patch.set_facecolor('#f8f8f8')  # Fondo del área de gráfica
-
-    # Agregar iconos
-    ax.plot(0, 0, 'bo', markersize=10, label="Base") 
-    ax.plot(dist_km, 0, 'ks', markersize=8, label="Ciudad")
-
-    # Flecha indicando dirección
-    ax.annotate('', xy=(dist_km/2, altura_km/2), 
-                xytext=(dist_km/2-0.5, altura_km/2-0.5),
-                arrowprops=dict(arrowstyle='->', lw=1.5))
+    # 5. Puntos clave
+    if datos['exito']:
+        px, py = datos['punto_intercepcion']
+        ax.scatter(px/1000, py/1000, color='lime', s=150, zorder=5,
+                  label=f"Intercepción ({py/1000:.1f} km)")
     
-    ax.legend()
+    # 6. Elementos de referencia
+    ax.scatter(0, 0, color='blue', s=80, label="Base")
+    ax.scatter(datos['distancia_ciudad']/1000, 0, color='black', 
+              marker='s', label="Objetivo")
+    
+    # 7. Zona de intercepción (1.5-2.5 km)
+    ax.axhspan(1.5, 2.5, color='yellow', alpha=0.1, 
+              label="Zona óptima")
+    
+    # 8. Ajustes finales
+    ax.legend(loc='upper right', bbox_to_anchor=(1.35, 1))
     canvas.draw()
